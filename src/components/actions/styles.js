@@ -62,6 +62,8 @@ export const DeleteAllButton = styled(ActionButton)`
 `;
 
 export const Mask = styled.div`
+  display: grid;
+  place-items: center;
   position: fixed;
   inset: 0;
   background-color: rgba(66, 66, 66, 0.2);

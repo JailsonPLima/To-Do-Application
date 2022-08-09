@@ -70,7 +70,6 @@ export const ToDoLabel = styled.label`
 `;
 
 export const ToDoText = styled.p`
-  font-family: "Poppins", sans-serif;
   font-size: 0.75rem;
   color: #fafafa;
 `;

@@ -19,7 +19,6 @@ export const AreaButton = styled.label`
   padding: 0.125rem 0.875rem;
   border: 1px solid #616161;
   border-radius: 0.5rem;
-  font-family: "Poppins", sans-serif;
   font-size: 0.6875rem;
   color: #fafafa;
   background-color: transparent;
