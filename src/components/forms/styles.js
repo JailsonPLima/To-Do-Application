@@ -30,10 +30,15 @@ export const AddButton = styled.button`
   height: 100%;
   border: none;
   border-radius: 0 0.75rem 0.75rem 0;
-  background-color: #9e9e9e;
+  background-color: #4ad66d;
   color: #fafafa;
   outline: none;
   cursor: pointer;
+  transition: background 0.15s ease-in;
+
+  &:disabled {
+    background-color: #9e9e9e;
+  }
 
   .icon {
     font-size: 1.75rem;
@@ -44,11 +49,11 @@ export const AddButton = styled.button`
 
 export const DelFormContainer = styled(AddFormContainer)`
   width: 100%;
-  max-width: 20rem;
+  max-width: 15rem;
   flex-direction: column;
   gap: 0.75rem;
   height: auto;
-  padding: 0.5rem;
+  padding: 0.5rem 0.5rem 0.75rem;
   background-color: #212121;
   border-radius: 0.5rem;
 
@@ -57,6 +62,16 @@ export const DelFormContainer = styled(AddFormContainer)`
     text-align: center;
     font-size: 0.875rem;
     color: #fafafa;
+  }
+
+  @media screen and (min-width: 48rem) {
+    max-width: 20rem;
+    gap: 1rem;
+    padding: 0.5rem 0.5rem 1rem;
+
+    h2 {
+      font-size: 1rem;
+    }
   }
 `;
 
@@ -76,4 +91,10 @@ export const DelFormButton = styled.button`
   font-size: 0.875rem;
   color: #fafafa;
   cursor: pointer;
+
+  @media screen and (min-width: 48rem) {
+    font-size: 1rem;
+    width: 3rem;
+    height: 1.75rem;
+  }
 `;

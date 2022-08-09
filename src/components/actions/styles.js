@@ -66,6 +66,7 @@ export const Mask = styled.div`
   place-items: center;
   position: fixed;
   inset: 0;
+  padding: 0 1.25rem;
   background-color: rgba(66, 66, 66, 0.2);
   backdrop-filter: blur(0.25rem);
   z-index: 9;

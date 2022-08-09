@@ -24,7 +24,7 @@ const AddToDoForm = ({ setFormOnMask }) => {
         value={newToDo}
         onChange={(e) => setNewToDo(e.target.value)}
       />
-      <AddButton type="submit">
+      <AddButton type="submit" disabled={!(newToDo.length >= 3)}>
         <BiPlus className="icon" />
       </AddButton>
     </AddFormContainer>

@@ -5,6 +5,10 @@ export const AreaOptions = styled.div`
   align-items: center;
   gap: 0.5rem;
   margin: 0.75rem 0 1rem;
+
+  @media screen and (min-width: 48rem) {
+    margin: 0.5rem 0 1rem;
+  }
 `;
 
 export const AreaInput = styled.input`
@@ -23,4 +27,6 @@ export const AreaButton = styled.label`
   color: #fafafa;
   background-color: transparent;
   outline: none;
+  cursor: pointer;
+  transition: background 0.15s ease-in;
 `;

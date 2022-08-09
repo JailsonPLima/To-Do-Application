@@ -36,6 +36,10 @@ export const ToDoBox = styled.div`
     opacity: 1;
     transform: translateY(0);
   }
+
+  @media screen and (min-width: 48rem) {
+    padding: 0.375rem 0.5rem;
+  }
 `;
 
 export const ToDoInput = styled.input`
@@ -60,6 +64,7 @@ export const ToDoLabel = styled.label`
   border: 1px solid #fafafa;
   align-self: flex-start;
   cursor: pointer;
+  transition: border 0.15s ease-out;
 
   & .icon {
     color: #4ad66d;
@@ -67,11 +72,19 @@ export const ToDoLabel = styled.label`
     transform: scale(0.8);
     transition: all 0.2s ease-out;
   }
+
+  @media screen and (min-width: 48rem) {
+    margin-top: 0.125rem;
+  }
 `;
 
 export const ToDoText = styled.p`
   font-size: 0.75rem;
   color: #fafafa;
+
+  @media screen and (min-width: 48rem) {
+    font-size: 0.9375rem;
+  }
 `;
 
 export const ToDoBlur = styled.div`
@@ -105,4 +118,10 @@ export const ToDoDeleteBox = styled.span`
   transform: translateY(0.25rem);
   transition: opacity 0.2s 0.2s ease-out, transform 0.2s 0.2s ease-out;
   cursor: pointer;
+
+  @media screen and (min-width: 48rem) {
+    width: 1.5rem;
+    height: 1.5rem;
+    font-size: 1rem;
+  }
 `;
