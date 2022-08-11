@@ -27,23 +27,27 @@ const Header = () => {
       "Dec",
     ];
 
-    console.log("função defineDate");
-
     return `${monthsArr[month]} ${day}, ${year}`;
   };
 
   const defineSalutation = () => {
-    const dayHour = new Date().getHours();
-    if (dayHour > 0 && dayHour < 12) {
+    const dayHour = new Date().getHours(),
+      dayMinutes = new Date().getMinutes();
+
+    if (
+        (dayHour >= 0 && dayMinutes > 0) && 
+        (dayHour <= 11 && dayMinutes <= 59)
+      ) {
       setSalutation("Good Morning");
-    } else if (dayHour > 12 && dayHour < 18) {
+    } else if (
+      (dayHour >= 12 && dayMinutes >= 0) && 
+      (dayHour <= 17 && dayMinutes <= 59)
+    ) {
       setSalutation("Good Afternoon");
-    } else if (dayHour > 18) {
+    } else if (dayHour >= 18) {
       setSalutation("Good Evening");
     }
   };
-
-  console.log("renderizou");
 
   useEffect(() => {
     setInterval(() => {
