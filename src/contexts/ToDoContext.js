@@ -1,24 +1,10 @@
-import React, { useState, createContext } from "react";
+import React, { useState, createContext, useEffect } from "react";
 
 export const ToDoContext = createContext();
 
 const ToDoContextProvider = ({ children }) => {
   const [todos, setTodos] = useState([
-    {
-      id: 0,
-      text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-      complete: false,
-    },
-    {
-      id: 1,
-      text: "Lorem Ipsum 1",
-      complete: true,
-    },
-    {
-      id: 2,
-      text: "Lorem Ipsum 2",
-      complete: false,
-    },
+    { id: 1, text: "Make a to do", complete: false },
   ]);
 
   const defineToDoCheck = (id) => {
@@ -35,10 +21,14 @@ const ToDoContextProvider = ({ children }) => {
   };
 
   const generateNewId = () => {
-    const idsArr = todos.map((todo) => todo.id);
-    const highestId = Math.max(...idsArr);
+    if (Boolean(todos.length)) {
+      const idsArr = todos.map((todo) => todo.id);
+      const highestId = Math.max(...idsArr);
 
-    return highestId + 1;
+      return highestId + 1;
+    } else {
+      return 1;
+    }
   };
 
   const addNewToDo = (text) => {
@@ -58,6 +48,27 @@ const ToDoContextProvider = ({ children }) => {
   };
 
   const deleteAllToDos = () => setTodos([]);
+
+  const updateToDos = () => {
+    const stringifiedToDos = JSON.stringify(todos);
+    localStorage.setItem("tasks", stringifiedToDos);
+  };
+
+  useEffect(() => {
+    if (Storage) {
+      // For the first acess
+      if (!localStorage.getItem("tasks")) {
+        updateToDos();
+      }
+
+      const toDosArr = JSON.parse(localStorage.getItem("tasks"));
+      setTodos(toDosArr);
+    } else {
+      alert("Your browser does not support using this applications");
+    }
+  }, []);
+
+  useEffect(() => updateToDos(), [todos]);
 
   return (
     <ToDoContext.Provider
