@@ -4,6 +4,10 @@
 
 Simple to-do app made with React.js and Styled-Components, using localStorage.
 
+## Preview:
+
+![preview-animation](https://github.com/JailsonPLima/To-Do-Application/blob/main/src/images/animation.gif "A animation")
+
 ## Quick Start 
 
 Install the dependencies: 
@@ -23,6 +27,8 @@ Now just acess your [localhost](https://localhost:3000).
 - Styled-Components
 
 ## License
+
+[![NPM](https://img.shields.io/apm/l/NPM)](https://github.com/JailsonPLima/To-Do-Application/blob/main/LICENSE)
 
 ## Author
 
